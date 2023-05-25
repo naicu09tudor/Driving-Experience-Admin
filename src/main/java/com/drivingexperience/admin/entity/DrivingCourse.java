@@ -1,5 +1,5 @@
 package com.drivingexperience.admin.entity;
 
 public class DrivingCourse {
-    //test
+    //test2
 }
