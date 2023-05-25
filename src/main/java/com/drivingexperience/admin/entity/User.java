@@ -1,18 +1,37 @@
 package com.drivingexperience.admin.entity;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+@Entity
+@Table(name = "Users")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id", nullable = false)
     private Long userId;
+
+    @Basic
+    @Column(name = "email", nullable = false, length = 50, unique = true)
     private String email;
+
+    @Basic
+    @Column(name = "password", nullable = false, length = 65)
     private String password;
 
+    @ManyToMany(fetch = FetchType.EAGER) // for security aspect, we will require the user to be fetched along with its role
+    @JoinTable(name = "user_role",
+    joinColumns = {@JoinColumn(name = "user_id")},
+    inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private Set<Role> roles = new HashSet<>();
 
+    @OneToOne(mappedBy = "user") // user will be slave, student will be master
     private Student student;
+
+    @OneToOne(mappedBy = "user")
     private Instructor instructor;
 
 

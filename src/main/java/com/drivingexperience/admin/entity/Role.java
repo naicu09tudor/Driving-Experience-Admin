@@ -1,14 +1,24 @@
 package com.drivingexperience.admin.entity;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+@Entity
+@Table(name = "Roles")
 public class Role {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "role_id", nullable = false)
     private Long roleId;
+
+    @Basic
+    @Column(name = "name", nullable = false, unique = true, length = 50)
     private String name;
 
+    @ManyToMany(mappedBy = "roles", fetch = FetchType.LAZY)
     private Set<User> users = new HashSet<>();
 
 

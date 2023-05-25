@@ -1,18 +1,37 @@
 package com.drivingexperience.admin.entity;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+
+@Entity
+@Table(name = "Students")
 public class Student {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "student_id", nullable = false)
     private Long studentId;
+
+    @Basic
+    @Column(name = "first_name", nullable = false)
     private String firstName;
+
+    @Basic
+    @Column(name = "last_name", nullable = false)
     private String lastName;
+
+    @Basic
+    @Column(name = "level", nullable = false, length = 50)
     private String level;
 
+    @ManyToMany(mappedBy = "students", fetch = FetchType.LAZY)
     private Set<DrivingCourse> drivingCourses = new HashSet<>();
 
+    @OneToOne(cascade = CascadeType.REMOVE) // in case we want to remove the student, we will also remove the user
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false)
     private User user;
     @Override
     public boolean equals(Object o) {
