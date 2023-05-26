@@ -19,6 +19,6 @@ public interface InstructorDao extends JpaRepository<Instructor, Long> {
     Page<Instructor> findInstructorsByName(@Param("name") String name, PageRequest PageRequest);
 
     @Query(value = "select i from Instructor as i where i.user.email=:email")
-    List<Instructor> findInstructorByEmail(@Param("email") String email);
+    Instructor findInstructorByEmail(@Param("email") String email);
 
 }

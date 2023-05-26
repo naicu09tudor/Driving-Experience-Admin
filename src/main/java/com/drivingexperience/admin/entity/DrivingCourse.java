@@ -55,7 +55,7 @@ public class DrivingCourse {
         student.getDrivingCourses().add(this);
     }
 
-    private void removeStudentFromCourse(Student student)
+    public void removeStudentFromCourse(Student student)
     {
         this.students.remove(student);
         student.getDrivingCourses().remove(this);
