@@ -16,40 +16,40 @@ public class OperationUtility {
     public static void usersOperations(UserDao userDao){
 
         createUsers(userDao);
-        updateUser(userDao);
-        deleteUser(userDao);
-        fetchUsers(userDao);
+        //updateUser(userDao);
+        //deleteUser(userDao);
+        //fetchUsers(userDao);
     }
 
     public static void rolesOperations(RoleDao roleDao){
 
         createRoles(roleDao);
-        updateRole(roleDao);
-        deleteRole(roleDao);
-        fetchRole(roleDao);
+        //updateRole(roleDao);
+        //deleteRole(roleDao);
+        //fetchRole(roleDao);
 
     }
 
     public static void instructorsOperations(UserDao userDao, InstructorDao instructorDao, RoleDao roleDao) {
         createInstructors(userDao, instructorDao, roleDao);
-        updateInstructor(instructorDao);
-        removeInstructor(instructorDao);
-        fetchInstructors(instructorDao);
+        //updateInstructor(instructorDao);
+        //removeInstructor(instructorDao);
+        //fetchInstructors(instructorDao);
     }
 
     public static void studentsOperations(UserDao userDao, StudentDao studentDao, RoleDao roleDao) {
         createStudents(userDao, studentDao, roleDao);
-        updateStudent(studentDao);
-        removeStudent(studentDao);
-        fetchStudents(studentDao);
+        //updateStudent(studentDao);
+        //removeStudent(studentDao);
+        //fetchStudents(studentDao);
     }
 
     public static void drivingCoursesOperations(DrivingCourseDao drivingCourseDao, InstructorDao instructorDao, StudentDao studentDao) {
-         createDrivingCourses(drivingCourseDao, instructorDao);
-         updateDrivingCourses(drivingCourseDao);
-         deleteDrivingCourse(drivingCourseDao);
-         fetchDrivingCourses(drivingCourseDao);
-         assignStudentsToCourse(drivingCourseDao, studentDao);
+         //createDrivingCourses(drivingCourseDao, instructorDao);
+         //updateDrivingCourses(drivingCourseDao);
+         //deleteDrivingCourse(drivingCourseDao);
+         //fetchDrivingCourses(drivingCourseDao);
+         //assignStudentsToCourse(drivingCourseDao, studentDao);
          fetchCoursesForStudent(drivingCourseDao);
     }
 

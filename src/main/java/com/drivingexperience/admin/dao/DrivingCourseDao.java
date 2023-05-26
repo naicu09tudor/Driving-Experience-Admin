@@ -12,7 +12,7 @@ public interface DrivingCourseDao extends JpaRepository<DrivingCourse, Long> {
 
     List<DrivingCourse> findDrivingCourseByCourseNameContains(String keyword);
 
-    @Query(value = "select * from DrivingCourses as c where c.course_id in (select e.course_id from enrolled_in as e where e.student_id=:studentId)", nativeQuery = true)
+    @Query(value = "select * from driving_courses as c where c.course_id in (select e.course_id from enrolled_in as e where e.student_id=:studentId)", nativeQuery = true)
     List<DrivingCourse> getDrivingCourseByStudentId(@Param("studentId") Long studentId);
 
 }
