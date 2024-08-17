@@ -10,7 +10,7 @@ The "Driving Experience" web application provides users with an intuitive interf
 
 ## Technical Architecture
 
-The application is built using a multi-layered architecture, as depicted in the attached diagram:
+The application is built using a multi-layered architecture:
 
 - **Core:** Developed with Java 17, Spring Framework, and Spring Boot.
 - **Model Layer:** Utilizes Spring Data JPA for data persistence.
