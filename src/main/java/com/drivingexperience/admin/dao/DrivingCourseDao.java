@@ -9,7 +9,10 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
+
+// DATA ACCESS OBJECT - queries for data access to the database
 public interface DrivingCourseDao extends JpaRepository<DrivingCourse, Long> {
+
     // configuration to use all the methods that are available in the JpaRepo
 
     Page<DrivingCourse> findDrivingCourseByCourseNameContains(String keyword, Pageable pageable);

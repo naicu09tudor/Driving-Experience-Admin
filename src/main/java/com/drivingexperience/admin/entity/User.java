@@ -1,5 +1,8 @@
 package com.drivingexperience.admin.entity;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
@@ -26,7 +29,9 @@ public class User {
     @JoinTable(name = "user_role",
     joinColumns = {@JoinColumn(name = "user_id")},
     inverseJoinColumns = {@JoinColumn(name = "role_id")})
+    @Fetch(value = FetchMode.JOIN)
     private Set<Role> roles = new HashSet<>();
+
 
     @OneToOne(mappedBy = "user") // user will be slave, student will be master
     private Student student;

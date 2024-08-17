@@ -1,5 +1,8 @@
 package com.drivingexperience.admin.dto;
 
+
+// Data Transfer Object - small objects that contains the data that the front end uses
+// Get req - we perform a mapping from the entity to the DTO
 public class DrivingCourseDTO {
 
     private Long courseId;

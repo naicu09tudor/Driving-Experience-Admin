@@ -18,6 +18,8 @@ import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 import java.util.stream.Collectors;
 
+
+// Logica aplicatiei este in Service Layer
 @Service
 @Transactional
 public class DrivingCourseServiceImpl implements DrivingCourseService {

@@ -33,6 +33,7 @@ public class Student {
     @OneToOne(cascade = CascadeType.REMOVE) // in case we want to remove the student, we will also remove the user
     @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false)
     private User user;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
